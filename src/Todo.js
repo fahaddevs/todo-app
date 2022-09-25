@@ -2,14 +2,25 @@ import React, {useState, useEffect} from 'react'
 
 const Todo = () => {
 
-  const [subject, setSubject] = useState('')
+  const [subject, setSubject] = useState('');
+
+  const [todos, setTodos] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(subject);
-  }
+    const task = {id: new Date().getTime().toString(), subject}
 
+    if (subject){
+      setTodos((todo)=>{
+        return [...todo, task]
+      });
+      setSubject('');
+    } else {
+      console.log('Field required')
+    }
+
+  }
   return (
     <>
       <div className="container">
@@ -24,6 +35,20 @@ const Todo = () => {
           />
           <button type='submit'>Add</button>
         </form>
+
+        <div className='todo-wrapper'>
+          {
+            todos.map((todo)=>{
+              const {id, subject} = todo;
+
+              return (
+                <div key={id} className='todo-item'>
+                  <h3>{subject}</h3>
+                </div>
+              )
+            })
+          }
+        </div>
       </div>
     </>
   )

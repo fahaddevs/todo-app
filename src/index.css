@@ -23,13 +23,14 @@ code {
 .container {
   width: 560px;
   margin: 100px auto;
-  padding: 40px;
-  background-color: #e5e5e5e5;
 }
 
 .todo-form {
   display: flex;
   flex-wrap: wrap;
+  padding: 40px;
+  background-color: #e5e5e5e5;
+  border-radius: 5px;
 }
 
 .todo-form input {
@@ -43,4 +44,19 @@ code {
 .todo-form button {
   width: 80px;
   font-size: 16px;
+}
+
+.todo-wrapper {
+  margin-block-start: 40px;
+}
+
+.todo-item {
+  padding-block: 15px;
+  padding-inline: 15px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.todo-item + .todo-item {
+  margin-block-start: 15px;
 }
