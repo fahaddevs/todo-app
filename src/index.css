@@ -5,9 +5,42 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+.container {
+  width: 560px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #e5e5e5e5;
+}
+
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todo-form input {
+  height: 50px;
+  padding-block: 10px;
+  padding-inline: 20px;
+  width: calc(100% - 80px);
+  font-size: 16px;
+}
+
+.todo-form button {
+  width: 80px;
+  font-size: 16px;
 }
